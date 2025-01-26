@@ -14,13 +14,4 @@ public class Models {
         private String name;
         private String numero;
     }
-
-
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public static class Color{
-        private String nameColor;
-        private String Tipo;
-    }
 }

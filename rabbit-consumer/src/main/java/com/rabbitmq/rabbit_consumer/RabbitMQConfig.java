@@ -1,6 +1,7 @@
 package com.rabbitmq.rabbit_consumer;
 
-import org.springframework.amqp.core.AmqpTemplate;
+import java.util.Map;
+
 import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -20,8 +21,8 @@ public class RabbitMQConfig {
 
     //cola
     @Bean
-    public Queue queueEjemplo(){
-        return new Queue(QUEUE_EJEMPLO);
+    public Queue ejemplo_Queue(){
+        return new Queue("ejemplo_queue",true, false, false, Map.of("x-dead-letter-exchange","dlx-exchange"));
     }
 
 

@@ -1,6 +1,8 @@
 package com.rabbitmq.rabbit_publisher;
 
+import java.util.Map;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -17,6 +19,11 @@ public class RabbitMQConfig {
     public static final String EXCHANGE = "message_exchange";
     public static final String ROUTING_KEY_EJEMPLO = "ejemplo_routing_key";
 
+
+    @Bean
+    public Queue ejemplo_Queue(){
+        return new Queue("ejemplo_queue",true, false, false, Map.of("x-dead-letter-exchange","dlx-exchange"));
+    }
 
     @Bean
     public TopicExchange topicExchange(){
