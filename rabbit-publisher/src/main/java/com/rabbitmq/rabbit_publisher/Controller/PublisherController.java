@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class PublisherController {
 
 
-    private RabbitTemplate template;
+    private final RabbitTemplate template;
 
 
     //mensaje para color
