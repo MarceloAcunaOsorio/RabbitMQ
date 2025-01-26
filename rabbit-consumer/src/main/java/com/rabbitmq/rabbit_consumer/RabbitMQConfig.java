@@ -3,6 +3,7 @@ package com.rabbitmq.rabbit_consumer;
 import java.util.Map;
 
 import org.springframework.amqp.core.*;
+import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
@@ -16,17 +17,18 @@ public class RabbitMQConfig {
     public static final String EXCHANGE = "message_exchange";
     public static final String ROUTING_KEY_EJEMPLO = "ejemplo_routing_key";
 
+    //nombre de la cola
     public static final String QUEUE_EJEMPLO = "ejemplo_queue";
 
 
-    //cola
+    //recibir cola
     @Bean
     public Queue ejemplo_Queue(){
         return new Queue("ejemplo_queue",true, false, false, Map.of("x-dead-letter-exchange","dlx-exchange"));
     }
 
 
-    //topico
+    //topic exchange
     @Bean
     public TopicExchange topicExchange(){
         return new TopicExchange(EXCHANGE);
@@ -42,17 +44,18 @@ public class RabbitMQConfig {
               .with(ROUTING_KEY_EJEMPLO);
     }
 
-
     //convertir a JSON
     @Bean
-    public MessageConverter messageConverter(){
+    public MessageConverter jsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
     }
 
-    @Bean
-    public AmqpTemplate amqpTemplate(ConnectionFactory connection){
-       final var template = new RabbitTemplate(connection);
-       template.setMessageConverter(messageConverter());
-       return template;
-    }
+   //conexion factory
+   @Bean
+   public AmqpTemplate amqpTemplate(ConnectionFactory connectionFactory) {
+     final var template = new RabbitTemplate(connectionFactory);
+     template.setMessageConverter(jsonMessageConverter());
+     return template;
+   }
+    
 }

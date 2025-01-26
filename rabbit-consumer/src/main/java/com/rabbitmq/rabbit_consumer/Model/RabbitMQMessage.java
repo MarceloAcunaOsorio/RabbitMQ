@@ -3,8 +3,12 @@ package com.rabbitmq.rabbit_consumer.Model;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "rabbitmq_messages")
 public class RabbitMQMessage {
 
@@ -13,17 +17,10 @@ public class RabbitMQMessage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "message_content", nullable = false)
-    private String messageContent;
+    @Column(name = "Name", nullable = false)
+    private String name;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+    @Column(name = "Numero", nullable = false)
+    private String numero;
 
-    public RabbitMQMessage() {
-    }
-
-    public RabbitMQMessage(String messageContent) {
-        this.messageContent = messageContent;
-        this.createdAt = LocalDateTime.now();
-    }
 }
