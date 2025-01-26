@@ -14,22 +14,14 @@ public class RabbitMQConfig {
 
     public static final String EXCHANGE = "message_exchange";
     public static final String ROUTING_KEY_EJEMPLO = "ejemplo_routing_key";
-    public static final String ROUTING_KEY_COLOR = "color_routing_key";
 
     public static final String QUEUE_EJEMPLO = "ejemplo_queue";
-    public static final String QUEUE_COLOR = "color_queue";
 
 
     //cola
     @Bean
     public Queue queueEjemplo(){
         return new Queue(QUEUE_EJEMPLO);
-    }
-
-    //cola
-    @Bean
-    public Queue queueColor(){
-        return new Queue(QUEUE_COLOR);
     }
 
 
@@ -48,17 +40,6 @@ public class RabbitMQConfig {
               .to(topicExchange)
               .with(ROUTING_KEY_EJEMPLO);
     }
-
-     //Binding
-     @Bean
-     public Binding bindingColor(Queue queueColor, TopicExchange topicExchange){
-        return BindingBuilder
-               .bind(queueColor)
-               .to(topicExchange)
-               .with(ROUTING_KEY_COLOR);
-     }
-
-
 
 
     //convertir a JSON

@@ -19,15 +19,6 @@ public class PublisherController {
     private final RabbitTemplate template;
 
 
-    //mensaje para color
-    @PostMapping(path = "color")
-    public String publishColor(@RequestBody models.Color color){
-       this.template.convertAndSend(RabbitMQConfig.EXCHANGE,RabbitMQConfig.ROUTING_KEY_COLOR,color);
-       return "color message send success";
-    }
-
-
-    
     //mensaje para ejemplo
     @PostMapping(path = "ejemplo")
     public String publishEjemplo(@RequestBody models.Ejemplo ejemplo){

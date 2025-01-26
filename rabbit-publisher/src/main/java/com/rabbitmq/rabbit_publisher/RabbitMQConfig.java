@@ -16,7 +16,6 @@ public class RabbitMQConfig {
 
     public static final String EXCHANGE = "message_exchange";
     public static final String ROUTING_KEY_EJEMPLO = "ejemplo_routing_key";
-    public static final String ROUTING_KEY_COLOR = "color_routing_key";
 
 
     @Bean

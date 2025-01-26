@@ -22,10 +22,4 @@ public class ConsumerListeners {
       log.info("Receiving ejemplo:{}",ejemplo);
     }
 
-
-    //metodo para leer los mensajes
-    @RabbitListener(queues = RabbitMQConfig.QUEUE_COLOR)
-    public void readColorMsg(Models.Color color){
-      log.info("Receiving color:{}",color);
-    }
 }
