@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RabbitMQMessage {
 
-    private String name;
-    private String numero;
+    private String Nombre;
+    private String Descripcion;
     
 }
 

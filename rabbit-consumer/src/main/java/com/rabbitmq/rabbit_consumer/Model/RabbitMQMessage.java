@@ -15,11 +15,11 @@ public class RabbitMQMessage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "Name", nullable = false)
-    private String name;
+    @Column(name = "Nombre", nullable = false)
+    private String Nombre;
 
-    @Column(name = "Numero", nullable = false)
-    private String numero;
+    @Column(name = "Descripcion", nullable = false)
+    private String Descripcion;
 
     @CreationTimestamp
     @Column(name = "Fecha_Creacion", nullable = false, updatable = false)
@@ -32,26 +32,26 @@ public class RabbitMQMessage {
     }
 
     //construcctor
-    public RabbitMQMessage(String name, String numero) {
-        this.name = name;
-        this.numero = numero;
+    public RabbitMQMessage(String Nombre, String Descripcion) {
+        this.Nombre = Nombre;
+        this.Descripcion = Descripcion;
     }
 
 
     //getter and setter
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
 
-    public String getNumero() {
-        return numero;
+    public String getDescripcion() {
+        return Descripcion;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
     }
 }

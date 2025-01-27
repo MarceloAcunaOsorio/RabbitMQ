@@ -11,6 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RabbitMQMessageDTO {
 
-    private String name;
-    private String numero;
+    private String Nombre;
+    private String Descripcion;
 }

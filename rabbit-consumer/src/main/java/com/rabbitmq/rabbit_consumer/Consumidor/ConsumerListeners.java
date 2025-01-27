@@ -30,8 +30,8 @@ public class ConsumerListeners {
       
       // Guardar en la base de datos
       RabbitMQMessage entity = new RabbitMQMessage();
-      entity.setName(message.getName());
-      entity.setNumero(message.getNumero());
+      entity.setNombre(message.getNombre());
+      entity.setDescripcion(message.getDescripcion());
       repository.save(entity);
   }
 
