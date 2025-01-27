@@ -3,12 +3,9 @@ package com.rabbitmq.rabbit_consumer.Consumidor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.rabbitmq.rabbit_consumer.RabbitMQConfig;
 import com.rabbitmq.rabbit_consumer.Model.RabbitMQMessage;
 import com.rabbitmq.rabbit_consumer.Model.RabbitMQMessageDTO;
 import com.rabbitmq.rabbit_consumer.Repository.RabbitMessageRepository;
-
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
