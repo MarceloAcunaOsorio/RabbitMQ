@@ -1,6 +1,5 @@
 package com.rabbitmq.rabbit_publisher.Model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

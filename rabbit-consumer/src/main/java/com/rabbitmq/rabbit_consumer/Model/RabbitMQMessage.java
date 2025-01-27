@@ -1,9 +1,7 @@
 package com.rabbitmq.rabbit_consumer.Model;
 
 import java.time.LocalDateTime;
-
 import org.hibernate.annotations.CreationTimestamp;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -23,7 +21,7 @@ public class RabbitMQMessage {
 
     @CreationTimestamp
     @Column(name = "Fecha_Creacion", nullable = false, updatable = false)
-    private LocalDateTime createdAt;
+    private LocalDateTime Fecha_Creacion;
 
 
 
